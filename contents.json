@@ -1,10 +1,12 @@
-[
-    {
-        "question": "おっぱい付近",
-        "correct": "大胸筋"
-    },
-    {
-        "question": "肩付近",
-        "correct": "三角筋"
-    }
-]
+{
+    "BASICS-01": [
+        {
+            "question": "おっぱい付近",
+            "correct": "大胸筋"
+        },
+        {
+            "question": "肩付近",
+            "correct": "三角筋"
+        }
+    ]
+}
