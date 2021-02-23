@@ -1,16 +1,34 @@
 {
     "BASICS-01": [
         {
-            "question": "おっぱい付近",
+            "question": "胸付近の筋肉",
             "correct": "大胸筋"
         },
         {
-            "question": "肩と首の間",
+            "question": "肩と首の間にある筋肉",
             "correct": "僧帽筋"
         },
         {
-            "question": "肩付近",
+            "question": "肩付近の筋肉",
             "correct": "三角筋"
+        }
+    ],
+    "BASICS-02": [
+        {
+            "question": "背中の上部に左右対称に位置する、逆三角形の平たい骨",
+            "correct": "肩甲骨"
+        },
+        {
+            "question": "腕を身体につなぎとめる役目をしている骨",
+            "correct": "鎖骨"
+        },
+        {
+            "question": "肩から肘までの腕の骨",
+            "correct": "上腕骨"
+        },
+        {
+            "question": "首の骨",
+            "correct": "頸椎"
         }
     ]
 }
