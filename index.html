@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>muscles</title>
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+          article, aside, dialog, figure, footer, header,
+          hgroup, menu, nav, section { display: block; }
+            /*
+            html {
+                background-color: #555;
+            }
+            */
+            body {
+                margin: 10px;
+                padding: 10px;
+            }
+            #cvsCarrelation {
+                background-color: #FFF;
+                border: solid 0.1em;
+                border-color: #DDD;
+            }
+
+            #cvsLastYear {
+                background-color: #FFF;
+                border: solid 0.1em;
+                border-color: #DDD;
+            }
+        </style>
+        <script type="text/javascript" src="index.js"></script>
+
+    </head>
+    <body>
+        <h1>Memorization of muscles</h1>
+        <p>Select Question -> <select id="cmbQuestion"></select></p>
+
+        <p> <input type="button" value="Start" id="btnStart"> </p>
+        <br>
+
+        <h2>PERFORMANCE</h2>
+
+        <h3>Number of achievements up to last year</h3>
+        <canvas id="cvsLastYear" width="800px" height="150px"></canvas>
+
+        <h3>ABOUT</h3>
+        <p>An app for memorizing muscles. Only Japanese is supported.</p>
+        
+        <h3>LINK</h3>
+        <p><a href="https://masan-k.github.io/100Calcs/100calcs.html">100Calcs</a></p>
+        <p><a href="https://masan-k.github.io/n-back/">n-back</a></p>
+
+        <script>
+            init();
+        </script>
+    </body>
+</html>
