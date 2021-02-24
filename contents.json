@@ -92,13 +92,13 @@
         },
         {
             "question": "首の骨",
-            "correct": "頸椎"
+            "correct": "頸椎,頸骨"
         }
     ],
     "TWO-NUM": [
         {
             "question": "01",
-            "correct": "綾波レイ"
+            "correct": "綾波レイ,綾波"
         },
         {
             "question": "02",
@@ -106,11 +106,107 @@
         },
         {
             "question": "03",
-            "correct": "おじさん,寺尾"
+            "correct": "レーザーラモン,RG"
         },
         {
             "question": "04",
             "correct": "レジン"
+        },
+        {
+            "question": "05",
+            "correct": "レゴ"
+        },
+        {
+            "question": "06",
+            "correct": "オムライス"
+        },
+        {
+            "question": "07",
+            "correct": "レオナ,レオナ姫"
+        },
+        {
+            "question": "08",
+            "correct": "おっぱい"
+        },
+        {
+            "question": "09",
+            "correct": "サッカー,レク"
+        },
+        {
+            "question": "10",
+            "correct": "イオ,てんちむ"
+        },
+        {
+            "question": "12",
+            "correct": "イニエスタ,ワンツー"
+        },
+        {
+            "question": "13",
+            "correct": "スフィフト"
+        },
+        {
+            "question": "14",
+            "correct": "14歳の母,三浦春馬,石"
+        },
+        {
+            "question": "15",
+            "correct": "イチゴ,イチゴジャム"
+        },
+        {
+            "question": "16",
+            "correct": "淫夢,野獣先輩"
+        },
+        {
+            "question": "17",
+            "correct": "稲妻,雷"
+        },
+        {
+            "question": "18",
+            "correct": "嫌"
+        },
+        {
+            "question": "19",
+            "correct": "徳川家康"
+        },
+        {
+            "question": "20",
+            "correct": "ビール,芳香剤,タバコ"
+        },
+        {
+            "question": "21",
+            "correct": "蓮舫"
+        },
+        {
+            "question": "23",
+            "correct": "ピーナッツ君,ひろゆき,ピーナッツくん"
+        },
+        {
+            "question": "24",
+            "correct": "日没,錦織,日清,ラ王"
+        },
+        {
+            "question": "25",
+            "correct": "ニコニコ動画"
+        },
+        {
+            "question": "26",
+            "correct": "ツムツム"
+        },
+        {
+            "question": "27",
+            "correct": "ツナ"
+        },
+        {
+            "question": "28",
+            "correct": "円,ニヤニヤ"
+        },
+        {
+            "question": "29",
+            "correct": "肉,ニク"
+        },
+        {
+            "question": "30",
+            "correct": "山王,三十路,沢北"
         }
     ]
 }
