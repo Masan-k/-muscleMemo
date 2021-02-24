@@ -1,5 +1,5 @@
 {
-    "BASICS-01": [
+    "MUSCLES-01": [
         {
             "question": "胸付近の筋肉",
             "correct": "大胸筋"
@@ -65,11 +65,19 @@
             "correct": "前脛骨筋"
         },
         {
+            "question": "お尻",
+            "correct": "大殿筋"
+        },
+        {
+            "question": "背骨についている筋肉の総称",
+            "correct": "脊柱起立筋"
+        },
+        {
             "question": "肩付近の筋肉",
             "correct": "三角筋"
         }
     ],
-    "BASICS-02": [
+    "BONE-01": [
         {
             "question": "背中の上部に左右対称に位置する、逆三角形の平たい骨",
             "correct": "肩甲骨"
