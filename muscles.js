@@ -1,11 +1,9 @@
 ﻿/*globals window, document, event , localStorage */
 
-const KEYCODE_ENTER = 13;
-
 let eBtnSubmit;
 let eLblMaxQuestion;
 let eLblQuestion;
-let currentCorrect;
+let currentCorrect = [];
 let eTxtAnswer;
 let eLblRemainingQuestion;
 let eLblCorrectCount;
@@ -61,7 +59,7 @@ function clickBtnNext() {
 function clickBtnSubmit() {
     'use strict';
     
-    if(currentCorrect === eTxtAnswer.value){
+    if(currentCorrect.includes(eTxtAnswer.value)){
         currentIndex += 1;
         correctCount += 1;
  
@@ -75,6 +73,9 @@ function clickBtnSubmit() {
             eLblRemainingQuestion.innerText = currentIndex;
             saveScore(correctCount, eLblMaxQuestion.innerText);
             drawPast();
+            eBtnSubmit.disabled = true;
+            eBtnNext.disabled = true;
+
         }
     }else{
         eLblStatus.innerText = "NG";
@@ -87,7 +88,7 @@ function setQuestion(currentId, correctCnt){
     eLblRemainingQuestion.innerText = currentId;
     eLblCorrectCount.innerText = correctCnt;
     eLblQuestion.innerText = contents[currentId].question;
-    currentCorrect = contents[currentId].correct;
+    currentCorrect = contents[currentId].correct.split(',');
 
     eTxtAnswer.value = '';
 
@@ -102,6 +103,10 @@ function init() {
     eLblMaxQuestion.innerText = contents.length
     eLblStatus.innerText = '';
     eTxtAnswer.value = '';
+
+    eBtnSubmit.disabled = false;
+    eBtnNext.disabled = false;
+
 
     setQuestion(currentIndex, correctCount);
     
@@ -293,8 +298,20 @@ function loadContents() {
     }
 }
 
+function keyInput() {
+    'use strict';
+    //const KEYCODE_START = 83;
+    const KEYCODE_ENTER = 13;
+    if (event.keyCode === KEYCODE_ENTER) {
+        event.preventDefault();
+        clickBtnSubmit();
+    }
+}
+
 window.onload = function () {
     'use strict';
+
+    document.body.onkeyup = keyInput;
 
     selectQuestion = location.search.split('=')[1];
 
