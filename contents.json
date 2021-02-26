@@ -102,7 +102,7 @@
         },
         {
             "question": "03",
-            "correct": "レーザーラモン,RG"
+            "correct": "レーザーラモン,RG,レーザー"
         },
         {
             "question": "04",
@@ -134,7 +134,7 @@
         },
         {
             "question": "19",
-            "correct": "徳川家康,宮川,イッテQ、内村"
+            "correct": "徳川家康,宮川,イッテQ、内村,いく,イク"
         },
         {
             "question": "20",
@@ -182,11 +182,11 @@
         },
         {
             "question": "53",
-            "correct": "古参"
+            "correct": "古参,小西まなみ"
         },
         {
             "question": "54",
-            "correct": "うどん"
+            "correct": "うどん,こっしー,コッシー"
         },
         {
             "question": "60",
@@ -242,7 +242,7 @@
         },
         {
             "question": "96",
-            "correct": "おしりあわせ"
+            "correct": "おしりあわせ,69の反対"
         },
         {
             "question": "98",
