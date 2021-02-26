@@ -97,10 +97,6 @@
     ],
     "TWO-NUM": [
         {
-            "question": "01",
-            "correct": "綾波レイ,綾波"
-        },
-        {
             "question": "02",
             "correct": "O2,オーツー"
         },
@@ -111,10 +107,6 @@
         {
             "question": "04",
             "correct": "レジン"
-        },
-        {
-            "question": "05",
-            "correct": "レゴ"
         },
         {
             "question": "06",
@@ -133,80 +125,128 @@
             "correct": "サッカー,レク"
         },
         {
-            "question": "10",
-            "correct": "イオ,てんちむ"
-        },
-        {
             "question": "12",
             "correct": "イニエスタ,ワンツー"
         },
         {
-            "question": "13",
-            "correct": "スウィフト"
-        },
-        {
             "question": "14",
-            "correct": "14歳の母,三浦春馬,石"
-        },
-        {
-            "question": "15",
-            "correct": "イチゴ,イチゴジャム"
-        },
-        {
-            "question": "16",
-            "correct": "淫夢,野獣先輩"
-        },
-        {
-            "question": "17",
-            "correct": "稲妻,雷"
-        },
-        {
-            "question": "18",
-            "correct": "嫌"
+            "correct": "14歳の母,１４歳の母,三浦春馬,石,石川遼"
         },
         {
             "question": "19",
-            "correct": "徳川家康"
+            "correct": "徳川家康,宮川,イッテQ、内村"
         },
         {
             "question": "20",
-            "correct": "ビール,芳香剤,タバコ"
+            "correct": "ビール,タバコ,芳香剤,におい,匂い"
         },
         {
             "question": "21",
             "correct": "蓮舫"
         },
         {
-            "question": "23",
-            "correct": "ピーナッツ君,ひろゆき,ピーナッツくん"
-        },
-        {
-            "question": "24",
-            "correct": "日没,錦織,日清,ラ王"
-        },
-        {
-            "question": "25",
-            "correct": "ニコニコ動画"
-        },
-        {
-            "question": "26",
-            "correct": "ツムツム"
-        },
-        {
-            "question": "27",
-            "correct": "ツナ"
-        },
-        {
             "question": "28",
-            "correct": "円,ニヤニヤ"
-        },
-        {
-            "question": "29",
-            "correct": "肉,ニク"
+            "correct": "円,ニヤニヤ,ニッパー,２パイ"
         },
         {
             "question": "30",
-            "correct": "山王,三十路,沢北"
+            "correct": "山王,竿"
+        },
+        {
+            "question": "32",
+            "correct": "ミニー,ミュウツー"
+        },
+        {
+            "question": "34",
+            "correct": "ミシン,指原,みじん切り"
+        },
+        {
+            "question": "35",
+            "correct": "みこちん,巫女"
+        },
+        {
+            "question": "42",
+            "correct": "シーツ,ゾンビ,死人"
+        },
+        {
+            "question": "45",
+            "correct": "四股"
+        },
+        {
+            "question": "48",
+            "correct": "初夜,視野"
+        },
+        {
+            "question": "51",
+            "correct": "ガチ恋ぽんぽこ,恋,鯉"
+        },
+        {
+            "question": "53",
+            "correct": "古参"
+        },
+        {
+            "question": "54",
+            "correct": "うどん"
+        },
+        {
+            "question": "60",
+            "correct": "ロレックス"
+        },
+        {
+            "question": "61",
+            "correct": "ロイ,ロイズ,チョコ"
+        },
+        {
+            "question": "62",
+            "correct": "浪人,でんがん"
+        },
+        {
+            "question": "63",
+            "correct": "ディカプリオ,ロミオとジュリエット"
+        },
+        {
+            "question": "65",
+            "correct": "フリスビー,星"
+        },
+        {
+            "question": "68",
+            "correct": "牢屋"
+        },
+        {
+            "question": "72",
+            "correct": "七人の侍"
+        },
+        {
+            "question": "74",
+            "correct": "ふなっしー,フナッシー"
+        },
+        {
+            "question": "79",
+            "correct": "メリケンナックル,ナックル"
+        },
+        {
+            "question": "80",
+            "correct": "ハレのちグゥ"
+        },
+        {
+            "question": "87",
+            "correct": "ウソップ,エネループ,パナソニック"
+        },
+        {
+            "question": "89",
+            "correct": "はぁちゃま"
+        },
+        {
+            "question": "95",
+            "correct": "キス,心肺蘇生,救護"
+        },
+        {
+            "question": "96",
+            "correct": "おしりあわせ"
+        },
+        {
+            "question": "98",
+            "correct": "ザブングル"
         }
     ]
 }
