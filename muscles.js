@@ -164,7 +164,15 @@ function drawPast() {
     const X_BLANK_WIDTH = (canvas.width - (INIT_BLANK_WIDTH * 2)) / DAYS_COUNT;
 
     const INIT_BLANK_HEIGHT = 25;
-    const VERTICAL_COUNT = contents.length;
+
+    let keys = getRecordKeys(DAYS_COUNT);
+    let maxQuestion = contents.length;
+    for(let i = 0; i < keys.length; i++){
+        let value = localStorage.getItem(keys[i]).split(',')
+        if(maxQuestion < value[1]){maxQuestion = value[1]}
+    }
+    const VERTICAL_COUNT = maxQuestion;
+    
     const Y_BLANK_WIDTH = (canvas.height - (INIT_BLANK_HEIGHT * 2)) / VERTICAL_COUNT;
 
     const HORIZONTAL_COUNT = DAYS_COUNT;
@@ -201,7 +209,7 @@ function drawPast() {
 
     ctx.textAlign = 'right';
     ctx.strokeText('The number of correct answers', INIT_BLANK_WIDTH + X_BLANK_WIDTH * (HORIZONTAL_COUNT +1) + 10, INIT_BLANK_HEIGHT + VERTICAL_COUNT*Y_BLANK_WIDTH + 15);
-    ctx.strokeText(contents.length , INIT_BLANK_WIDTH + X_BLANK_WIDTH * (HORIZONTAL_COUNT +1) + 10, INIT_BLANK_HEIGHT);
+    ctx.strokeText(maxQuestion, INIT_BLANK_WIDTH + X_BLANK_WIDTH * (HORIZONTAL_COUNT +1) + 10, INIT_BLANK_HEIGHT);
     ctx.strokeText(0 , INIT_BLANK_WIDTH + X_BLANK_WIDTH * (HORIZONTAL_COUNT +1) + 10, INIT_BLANK_HEIGHT + VERTICAL_COUNT*Y_BLANK_WIDTH);
 
     //Correct answer rate
@@ -215,7 +223,6 @@ function drawPast() {
     //--------------------
     //Drawing a bar graph
     //--------------------
-    let keys = getRecordKeys(DAYS_COUNT);
 
     ctx.beginPath();
     ctx.lineWidth = '1.0';
