@@ -1,4 +1,4 @@
-﻿/*globals window, document, event , localStorage */
+﻿/*globals window, document, event , localStorage, setInterval */
 
 let eBtnSubmit;
 let eLblMaxQuestion;
@@ -8,13 +8,21 @@ let eTxtAnswer;
 let eLblRemainingQuestion;
 let eLblCorrectCount;
 let eLblStatus;
+let eLblWaitCount;
+let eLblMissAnswer;
 let eBtnNext;
+let eBtnStart;
 let currentIndex;
 let correctCount;
 let eBtnReset;
 let eBtnMenu;
 let contents;
-let selectQuestion
+let selectQuestion;
+let intervalId;
+let waitCount;
+let missQuestion = [];
+let missAnswer = [];
+const WAIT_MAX_COUNT = 10;
 
 function getRandom(min, max) {
     'use strict';
@@ -40,19 +48,69 @@ function saveScore(correctCnt, maxQuestion){
 
 }
 
+function countdown() {
+    'use strict';
+    waitCount -= 1;
+    if(0 < waitCount){
+	setWaitCount();
+    }else{
+        clickBtnNext();
+    }       
+}
+
+function setWaitCount() {
+    'use strict';
+    let str = ' ';
+    for(let i = 0;i < waitCount; i++){
+        str = str + '*';
+    }
+    eLblWaitCount.innerText = str;
+}
+
+function clickBtnStart() {
+    'use strict';
+    setQuestion(currentIndex, correctCount);
+    intervalId = setInterval(countdown, 1000);
+
+    eBtnStart.disabled = true;
+    eLblStatus.innerText = 'Please enter the answer';
+}
+
+function setClear() {
+    'use strict';
+    eLblStatus.innerText = "Clear!!";
+    eLblCorrectCount.innerText = correctCount;
+    eLblRemainingQuestion.innerText = currentIndex;
+    saveScore(correctCount, eLblMaxQuestion.innerText);
+    drawPast();
+
+    eLblWaitCount = '';
+    clearInterval(intervalId);
+
+    eBtnSubmit.disabled = true;
+    eBtnNext.disabled = true;
+
+    let answer = '';
+    for(let i=0; i < missQuestion.length; i++){
+        answer = answer + missAnswer[i] + '(' + missQuestion[i] + ')' + '\n';
+    }
+    eLblMissAnswer.innerText = answer
+
+}
+
 function clickBtnNext() {
     'use strict';
+
+    missQuestion.push(contents[currentIndex].question);
+    missAnswer.push('none');
 
     if(currentIndex !== contents.length){
         currentIndex += 1;
         if(currentIndex !== contents.length){
             setQuestion(currentIndex, correctCount);
         }else{
-            eLblStatus.innerText = "Clear!!";
-            eLblRemainingQuestion.innerText = currentIndex;
-            saveScore(correctCount, eLblMaxQuestion.innerText);
-            drawPast();
-        }
+            setClear();
+	}
     }
 }
 
@@ -68,17 +126,12 @@ function clickBtnSubmit() {
             setQuestion(currentIndex, correctCount); 
             
         }else{
-            eLblStatus.innerText = "Clear!!";
-            eLblCorrectCount.innerText = correctCount;
-            eLblRemainingQuestion.innerText = currentIndex;
-            saveScore(correctCount, eLblMaxQuestion.innerText);
-            drawPast();
-            eBtnSubmit.disabled = true;
-            eBtnNext.disabled = true;
-
+	    setClear();
         }
     }else{
         eLblStatus.innerText = "NG";
+        missQuestion.push(contents[currentIndex].question);
+        missAnswer.push(eTxtAnswer.value);
     }
 }
 
@@ -91,7 +144,8 @@ function setQuestion(currentId, correctCnt){
     currentCorrect = contents[currentId].correct.split(',');
 
     eTxtAnswer.value = '';
-
+    waitCount = WAIT_MAX_COUNT;
+    setWaitCount();
 }
 
 function init() {
@@ -99,17 +153,19 @@ function init() {
     
     currentIndex = 0;
     correctCount = 0;
+    waitCount = WAIT_MAX_COUNT;
+    setWaitCount();
 
     eLblMaxQuestion.innerText = contents.length
-    eLblStatus.innerText = '';
+    eLblStatus.innerText = 'Waiting for start';
     eTxtAnswer.value = '';
 
     eBtnSubmit.disabled = false;
     eBtnNext.disabled = false;
+    eBtnStart.disabled = false;
 
-
-    setQuestion(currentIndex, correctCount);
-    
+    missQuestion = [];
+    missAnswer = [];
 }
 
 function clickBtnReset() {
@@ -307,9 +363,11 @@ function loadContents() {
 
 function keyInput() {
     'use strict';
-    //const KEYCODE_START = 83;
     const KEYCODE_ENTER = 13;
-    if (event.keyCode === KEYCODE_ENTER) {
+    if(currentIndex >= contents.length){
+        return;
+    }
+    if(event.keyCode === KEYCODE_ENTER) {
         event.preventDefault();
         clickBtnSubmit();
     }
@@ -334,12 +392,18 @@ window.onload = function () {
     eBtnMenu = document.getElementById("btnMenu"),
     eBtnMenu.addEventListener("click", clickBtnMenu, false);
 
+    eBtnStart = document.getElementById("btnStart"),
+    eBtnStart.addEventListener("click", clickBtnStart, false);
+
     eLblQuestion = document.getElementById("lblQuestion");
     eTxtAnswer = document.getElementById("txtAnswer");
     eLblMaxQuestion = document.getElementById("lblMaxQuestion");
     eLblRemainingQuestion = document.getElementById("lblRemainingQuestion");
     eLblCorrectCount = document.getElementById("lblCorrectCount");
     eLblStatus = document.getElementById("lblStatus");
+    eLblWaitCount = document.getElementById("lblWaitCount");
+
+    eLblMissAnswer = document.getElementById("lblMissAnswer");
 
     loadContents();
     

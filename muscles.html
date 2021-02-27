@@ -10,7 +10,7 @@
           article, aside, dialog, figure, footer, header,
           hgroup, menu, nav, section { display: block; }
 
-            body {
+            body{
                 margin: 10px;
                 padding: 10px;
             }
@@ -33,16 +33,19 @@
     </head>
     <body>
         <h1><LABEL id="lblTitle">Please answer the question</LABEL></h1>
-        
-        <p>[Q]<LABEL id="lblQuestion">this is Question</LABEL></p>            
+        <p><input type="button" value="Start" id="btnStart"></p>
+        <p>[Q]<LABEL id="lblQuestion"></LABEL></p>            
         <p>[A]<input type="text" id="txtAnswer" size="30" maxlength="30"></p>
         <p>[STATUS]<LABEL id="lblStatus">this is Status</LABEL></p>
+        <p><LABEL id="lblWaitCount">this is waitCount</LABEL>
+        <p><LABEL id="lblMissAnswer"></LABEL>
+
         <p><input type="button" value="Submit" id="btnSubmit"></p>
         <br>
         <p><input type="button" value="Next" id="btnNext"></p>
 
-        <p>Number of remaining questions -> <label id="lblRemainingQuestion">RQ</label>/<label id="lblMaxQuestion">MQ</label></p>        
-        <p>The number of correct answers -> <label id="lblCorrectCount">cc</p>
+        <p>Number of remaining questions -> <label id="lblRemainingQuestion">0</label>/<label id="lblMaxQuestion">MQ</label></p>        
+        <p>The number of correct answers -> <label id="lblCorrectCount">0</p>
         <p><input type="button" value="Reset" id="btnReset"></p>
         <p><input type="button" value="Go Menu" id="btnMenu"></p>
 
